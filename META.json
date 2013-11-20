@@ -4,7 +4,7 @@
       "Andrea Guzzo <xant@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.72, CPAN::Meta::Converter version 2.132830",
+   "generated_by" : "ExtUtils::MakeMaker version 6.82, CPAN::Meta::Converter version 2.132830",
    "license" : [
       "unknown"
    ],
@@ -32,12 +32,16 @@
       },
       "runtime" : {
          "requires" : {
+            "File::Temp" : "0",
+            "Net::HTTP" : "0",
+            "SOCKET" : "0",
             "ShardedKV" : "0",
+            "Test::HTTP::Server" : "0",
             "Test::More" : "0",
             "URI" : "0"
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.1"
+   "version" : "0.2"
 }
