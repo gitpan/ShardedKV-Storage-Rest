@@ -4,9 +4,9 @@ use strict;
 use Moose;
 use Net::HTTP;
 use URI;
-use SOCKET;
+use Socket;
 
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 with 'ShardedKV::Storage';
 
@@ -52,7 +52,7 @@ sub _send_http_request {
 
     my ($code, $mess, %h);
     eval {
-        $s->write_request($type => $uri->path . "/$key", 'User-Agent' => "p5-ShardedKV", $body);
+        $s->write_request($type => $uri->path . "/$key", 'User-Agent' => "p5-ShardedKV", $body ? $body : "");
         ($code, $mess, %h) = $s->read_response_headers;
         1;
     } or do {
@@ -94,6 +94,8 @@ sub get {
 
 sub set {
     my ($self, $key, $value_ref) = @_;
+
+    return unless $value_ref;
 
     my ($s, $code, $mess, %h) = $self->_send_http_request('PUT', $key, $value_ref);
     return unless defined $code;
