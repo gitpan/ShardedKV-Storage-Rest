@@ -4,7 +4,7 @@
       "Andrea Guzzo <xant@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.84, CPAN::Meta::Converter version 2.120351",
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "unknown"
    ],
@@ -43,5 +43,5 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.7"
+   "version" : "0.8"
 }
